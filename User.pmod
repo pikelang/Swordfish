@@ -1,4 +1,5 @@
 import  Stdio;
+import .Misc;
 
 class User {
 	object Conn = File();
@@ -68,11 +69,5 @@ class User {
 	}
 }
 
-class Sender {
-	string nick;
-	string host;
-	string dest;
-	string name;
-}
 
 
