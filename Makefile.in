@@ -1,15 +1,11 @@
 @make_variables@
 
-VPATH=@srcdir@:@srcdir@/../..:../..
+VPATH=@srcdir@
 
-OBJS=
+#OBJS=Swordfish.o
 
-AUTODOC_SRC_IN=
+MODNAME=Swordfish
 
-MODDIR=/
-
-MODNAME=demo
-MODULE_PMOD_IN=swordfish.pmod
 
 MODULE_LDFLAGS=@LDFLAGS@ @LIBS@
 
