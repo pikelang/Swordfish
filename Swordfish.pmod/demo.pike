@@ -1,4 +1,5 @@
-import .module;
+import .User;
+import .Misc;
 
 class Mybot {
 	inherit User;
