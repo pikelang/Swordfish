@@ -1,6 +1,6 @@
 import .Swordfish.Connection;
-import .Swordfish.Misc;
-
+import .Swordfish.Message;
+import .Swordfish.Sender;
 class Mybot {
 	inherit Connection;
 	string Comchar;
