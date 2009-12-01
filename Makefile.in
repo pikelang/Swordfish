@@ -1,16 +1,14 @@
 @make_variables@
 
-VPATH=@srcdir@
+VPATH=@srcdir@:@srcdir@/../..:../..
 
 OBJS=
 
 AUTODOC_SRC_IN=
 
-MODDIR=/
+MODDIR=swordfish.pmod/
 
 MODNAME=client
-
-MODULE_PMOD_IN=swordfish.pmod
 
 MODULE_LDFLAGS=@LDFLAGS@ @LIBS@
 
