@@ -86,6 +86,15 @@ class User {
 	int quit(string message) {
 		return raw("QUIT :" + message);
 	}
+
+	Sender fillsender(array info) {
+		Sender sender = Sender();
+		sender->nick = info[0];
+		sender->name = info[1];
+		sender->host = info[2];
+		sender->dest = info[3];
+		return sender;
+	}
 }
 
 

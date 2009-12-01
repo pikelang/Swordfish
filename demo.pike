@@ -14,16 +14,12 @@ class Mybot {
 		}
 		else {
 			Sender sender = Sender();
+			Misc misc = Misc(); //No static functions is annoying
 			array info = ({});
 			string message;
 			if(Regexp.split2(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.*?)", data) != 0) {
 				info = Regexp.split(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.+)", data);
-				
-				//TODO: Investigate structs
-				sender->nick = info[0];
-				sender->name = info[1];
-				sender->host = info[2];
-				sender->dest = info[3];
+				sender = misc->fillsender(info);;
 				message = info[4];
 			
 				if(array command = Regexp.split("^"+Comchar+"(.+)", message)) {
