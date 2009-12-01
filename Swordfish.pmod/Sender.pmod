@@ -2,13 +2,13 @@ class Sender {
 
         string nick;
         string host;
-        string dest;
         string name;
-	void create(array info) {
-                nick = info[0];
-                name = info[1];
-                host = info[2];
-                dest = info[3];
+	void create(string senderinfo) {
+		nick = (senderinfo/"!")[0];
+		name = ((senderinfo/"!")[1]/"@")[0];
+		host = ((senderinfo/"!")[1]/"@")[1];
+		write(nick+"\n"+name+"\n"+host+"\n");
+
 	}
 
 }

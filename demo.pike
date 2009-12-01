@@ -21,13 +21,13 @@ class Mybot {
 				if(array command = Regexp.split("^"+Comchar+"(.+)", message->msg)) {
 					switch(command[0]-"\r"-"\n") {
 						case "foo":
-							send(message->sender->dest, "bar!");
+							send(message->dest, "bar!");
 							break;
 						case "quit":
 							quit("Quit!");
 							break;
 						case "action":
-							action(message->sender->dest, "foo");
+							action(message->dest, "jumps at " + message->sender->nick);
 					}
 				}
 			}
