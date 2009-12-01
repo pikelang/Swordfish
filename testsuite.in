@@ -1,6 +1,2 @@
-import .User;
-import .Misc;
-
-int main () {
-  test_equal(1, 1);
-}
+test_eq(
+        "a","b")
