@@ -15,8 +15,8 @@ class Mybot {
 		else {
 			array info = ({});
 			string message;
-			if(Regexp.split2(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.*?)", data) != 0) {
-				info = Regexp.split(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.+)", data);
+			if((info = Regexp.split2(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.*?)", data)) != 0) {
+//				info = Regexp.split(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.+)", data);
 				Sender sender = Sender(info);
 				message = info[4];
 			
