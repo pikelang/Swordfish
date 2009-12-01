@@ -1,1 +1,3 @@
-#pike __REAL_VERSION__
+
+import .User;
+import .Misc;

@@ -1,5 +1,5 @@
-import .User;
-import .Misc;
+import .Swordfish.User;
+import .Swordfish.Misc;
 
 class Mybot {
 	inherit User;
