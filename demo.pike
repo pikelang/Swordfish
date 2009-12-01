@@ -15,7 +15,6 @@ class Mybot {
 		else {
 			array info = ({});
 			if(Regexp.split2(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.*?)", data) != 0) {
-				write("foobar");
 				Message message = Message(data);
 				write(message->msg);
 			
