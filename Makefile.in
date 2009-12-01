@@ -2,12 +2,9 @@
 
 VPATH=@srcdir@
 
-#OBJS=Swordfish.o
+MODDIR=Swordfish.pmod/
 
 MODNAME=Swordfish
-
-
-MODULE_LDFLAGS=@LDFLAGS@ @LIBS@
 
 CONFIG_HEADERS=@CONFIG_HEADERS@
 
