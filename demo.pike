@@ -1,4 +1,5 @@
 import .User;
+import .Misc;
 
 class Mybot {
 	inherit User;
@@ -26,7 +27,14 @@ class Mybot {
 				message = info[4];
 			
 				if(array command = Regexp.split("^"+Comchar+"(.+)", message)) {
-						write(command[0]);
+					switch(command[0]-"\r"-"\n") {
+						case "foo":
+							send(sender->dest, "bar!");
+							break;
+						case "quit":
+							quit("Quit!");
+							break;
+					}
 				}
 			}
 		}

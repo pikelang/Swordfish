@@ -67,6 +67,18 @@ class User {
 	{
 		write("--> " + data + "\n");
 	}
+	
+	int send(string channel, string message) {
+		return raw("PRIVMSG " + channel + " :" + message);
+	}
+
+	int action(string channel, string action) {
+		return raw("PRIVMSG " + channel + " :\001ACTION " + action + "\001");
+	}
+	
+	int quit(string message) {
+		return raw("QUIT :" + message);
+	}
 }
 
 
