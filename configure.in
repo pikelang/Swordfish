@@ -1,4 +1,4 @@
-AC_INIT()
+AC_INIT(swordfish.pmod)
 
 
 AC_MODULE_INIT()

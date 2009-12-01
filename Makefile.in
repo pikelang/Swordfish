@@ -6,9 +6,10 @@ OBJS=
 
 AUTODOC_SRC_IN=
 
-MODDIR=swordfish.pmod/
+MODDIR=/
 
-MODNAME=client
+MODNAME=demo
+MODULE_PMOD_IN=swordfish.pmod
 
 MODULE_LDFLAGS=@LDFLAGS@ @LIBS@
 
