@@ -6,11 +6,11 @@ OBJS=
 
 AUTODOC_SRC_IN=
 
-MODDIR=Protocols.pmod/BEEP.pmod/
+MODDIR=swordfish.pmod/
 
 MODNAME=client
 
-MODULE_PMOD_IN=module.pmod.in
+MODULE_PMOD_IN=Swordfish
 
 MODULE_LDFLAGS=@LDFLAGS@ @LIBS@
 
