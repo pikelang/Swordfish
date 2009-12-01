@@ -1,3 +1,3 @@
 
-import .User;
+import .Connection;
 import .Misc;

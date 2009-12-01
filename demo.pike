@@ -1,8 +1,8 @@
-import .Swordfish.User;
+import .Swordfish.Connection;
 import .Swordfish.Misc;
 
 class Mybot {
-	inherit User;
+	inherit Connection;
 	string Comchar;
 	void handle(string data) {
 		write ("--> " + data + "\n");
@@ -13,13 +13,11 @@ class Mybot {
 			}
 		}
 		else {
-			Sender sender = Sender();
-			Misc misc = Misc(); //No static functions is annoying
 			array info = ({});
 			string message;
 			if(Regexp.split2(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.*?)", data) != 0) {
 				info = Regexp.split(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.+)", data);
-				sender = misc->fillsender(info);;
+				Sender sender = Sender(info);
 				message = info[4];
 			
 				if(array command = Regexp.split("^"+Comchar+"(.+)", message)) {
