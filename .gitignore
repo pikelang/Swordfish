@@ -1,1 +1,15 @@
 .*.swp
+/Makefile
+/config.cache
+/config.log
+/config.status
+/dependencies
+/linker_options
+/make_variables
+/modlist_segment
+/propagated_variables
+/testsuite
+/configure
+/autom4te.cache/output.0
+/autom4te.cache/requests
+/autom4te.cache/traces.0
