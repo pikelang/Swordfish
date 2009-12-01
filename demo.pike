@@ -34,6 +34,8 @@ class Mybot {
 						case "quit":
 							quit("Quit!");
 							break;
+						case "action":
+							action(sender->dest, "foo");
 					}
 				}
 			}

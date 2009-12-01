@@ -24,14 +24,17 @@ class User {
 		return 0;
 	}
 
-	int join(string channel) {
-		if (raw("JOIN " + channel) != 0) {
+	int join(string dest) {
+		if (raw("JOIN " + dest) != 0) {
 			return 1; //Failed.
 		}
 		return 0;
 	}
 
 
+	void reconnect() {
+		write("reconnecting \n");
+	}
 	/******* Connection functions ************/
 	int connect(){
 		if (!Conn->connect(Server,Port)) {
@@ -39,11 +42,11 @@ class User {
 			return 1; //return failure
 		} else { //Connection successful
 			write("Connected!\n");
-			Conn->set_nonblocking();
+			Conn->set_nonblocking(0,0, reconnect);
 			nick(Nick);
 			raw("USER " + Userln);
-			foreach(Channels, string channel) {
-				join(channel);
+			foreach(Channels, string dest) {
+				join(dest);
 			}
 		}
 		return 0;
@@ -68,12 +71,16 @@ class User {
 		write("--> " + data + "\n");
 	}
 	
-	int send(string channel, string message) {
-		return raw("PRIVMSG " + channel + " :" + message);
+	int send(string dest, string message) {
+		return raw("PRIVMSG " + dest + " :" + message);
 	}
 
-	int action(string channel, string action) {
-		return raw("PRIVMSG " + channel + " :\001ACTION " + action + "\001");
+	int ctcp(string dest, string message) {
+		return raw("PRIVMSG " + dest + " :\001" + message + "\001");
+	}
+
+	int action(string dest, string action) {
+		return ctcp(dest, "ACTION " + action);
 	}
 	
 	int quit(string message) {
