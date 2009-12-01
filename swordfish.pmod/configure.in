@@ -1,0 +1,7 @@
+AC_INIT(module.pmod.in)
+
+
+AC_MODULE_INIT()
+
+
+AC_OUTPUT(Makefile)
