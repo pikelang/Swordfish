@@ -14,22 +14,21 @@ class Mybot {
 		}
 		else {
 			array info = ({});
-			string message;
-			if((info = Regexp.split2(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.*?)", data)) != 0) {
-//				info = Regexp.split(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.+)", data);
-				Sender sender = Sender(info);
-				message = info[4];
+			if(Regexp.split2(":(.*?)!(.*?)@(.*?) PRIVMSG (.*?) :(.*?)", data) != 0) {
+				write("foobar");
+				Message message = Message(data);
+				write(message->msg);
 			
-				if(array command = Regexp.split("^"+Comchar+"(.+)", message)) {
+				if(array command = Regexp.split("^"+Comchar+"(.+)", message->msg)) {
 					switch(command[0]-"\r"-"\n") {
 						case "foo":
-							send(sender->dest, "bar!");
+							send(message->sender->dest, "bar!");
 							break;
 						case "quit":
 							quit("Quit!");
 							break;
 						case "action":
-							action(sender->dest, "foo");
+							action(message->sender->dest, "foo");
 					}
 				}
 			}
