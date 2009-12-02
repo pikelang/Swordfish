@@ -1,5 +1,6 @@
 
-
+//The first 10 are taken from the manual as an example of a *working*
+//test.
 test_true([[1.0e-40]])
 
 test_any([[
