@@ -1,0 +1,51 @@
+
+
+test_true([[1.0e-40]])
+
+test_any([[
+  int f (int i) {i = 0; return i;};
+  return f (1);
+]],0)
+
+test_any_equal([[
+  mixed a=({1,2,3});
+  a[*] += 1;
+  return a;
+]], [[ ({2,3,4}) ]])
+
+test_equal([[ ({10,20})[*] + 30  ]], [[ ({40, 50}) ]])
+
+test_do([[
+  int x;
+  if (time())
+    x = 1;
+  else
+    foo: break foo;
+]])
+
+test_false(glob("*f","foo"))
+
+test_compile([[Stdio.File foo=Stdio.File();]])
+
+test_compile_any([[
+  void foo() 
+  {
+    Stdio.File bar(int x, int y)
+    { 
+      return 0;
+    }; 
+  } 
+]])
+
+test_compile_error([[ int a="a"; ]])
+
+test_compile_error_any([[
+  int a=5;
+  string b="a";
+  a=b;
+]])
+
+
+test_any_equal([[
+        Swordfish.Message a = Swordfish.Message(":nick!user@host COMMAND ARG1 ARG2 :Rest of it");
+                          return "b" ]], "a")
